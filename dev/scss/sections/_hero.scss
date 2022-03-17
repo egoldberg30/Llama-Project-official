@@ -1,0 +1,21 @@
+#hero{
+
+
+    #hero-image{
+        align-items: center;
+        background-image: url("../img/hero/llamas_hero.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 600px;
+
+        @include lg {
+            height: 900px;
+        }
+
+        @include xl {
+            height: 1000px;
+        }
+    }
+
+
+}

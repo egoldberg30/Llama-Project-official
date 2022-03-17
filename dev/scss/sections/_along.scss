@@ -1,0 +1,127 @@
+#along {
+    padding: 64px 0;
+    background-image: linear-gradient($tan, $blue);
+
+    @include md{
+        padding: 72px;
+    }
+
+    @include lg {
+        display: grid;
+        grid-template-columns: auto 1000px auto;
+        grid-template-areas: ". along .";
+        padding: 130px 0;
+    }
+
+    @include xl {
+        grid-template-columns: auto 1200px auto;
+    }
+
+    #along-content {
+        grid-area: along;
+        display: grid;
+        grid-template-areas: " . along-content . ";
+        grid-template-columns: 40px auto 40px;
+
+        >div {
+            grid-area: along-content;
+
+            display: grid;
+            grid-template-columns: 30% auto;
+            grid-template-areas: "h1 h2"
+                "image image"
+                "p1 p1"
+                "p2 p2"
+            ;
+
+            @include md {
+                grid-template-columns: 10% 40% auto auto;
+                grid-template-areas: "h1 h2 . ."
+                    "image image image image"
+                    "p1 p1 p1 p1"
+                    "p2 p2 p2 p2"
+                ;
+            }
+
+            h1 {
+                grid-area: h1;
+
+                @include lg{
+                    margin-left: -30px;
+                  
+                }
+            }
+
+
+
+            h2 {
+                grid-area: h2;
+                color: $caramel;
+                font-size: rem-calc(35);
+                margin-left: -20px;
+
+                @include md {
+                    font-size: rem-calc(40);
+                    margin-left: 25px;
+                }
+
+                @include lg{
+                    color: $tan;
+                    margin-top: 30px;
+                    margin-left: 15px;
+                  
+                    
+                }
+            }
+
+            #along-image {
+                grid-area: image;
+                background-image: url("../img/along/along.jpg");
+                background-position: center;
+                background-size: cover;
+                height: 300px;
+                border-radius: 15px;
+                margin: 15px 0;
+
+                @include lg {
+                    margin-top: -100px;
+                    height: 600px;
+                }
+            }
+
+            p1 {
+                grid-area: p1;
+                font-weight: 500;
+                color: $brown;
+                font-size: rem-calc(24);
+                margin: 15px;
+
+                @include md {
+                    font-size: rem-calc(38);
+                }
+
+                @include lg{
+                    margin: 50px;
+                }
+
+            }
+
+            p2 {
+                grid-area: p2;
+                color: $brown;
+                font-size: rem-calc(18);
+                margin: 15px;
+
+                @include md {
+                    font-size: rem-calc(24);
+                }
+
+                @include lg{
+                    margin: 0 50px 0px 50px;
+                }
+
+               
+            }
+        }
+    }
+}

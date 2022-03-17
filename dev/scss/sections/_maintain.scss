@@ -1,0 +1,235 @@
+#maintain {
+    padding: 64px 0;
+    display: grid;
+    grid-template-columns: 40px auto 40px;
+    grid-template-areas: ". maintain .";
+    background-image: linear-gradient($tan1, $tan1), url("../img/maintain/maintain.jpg");
+    background-position: center;
+    background-size: cover;
+
+
+    @include md {
+        grid-template-columns: auto 800px auto;
+        padding: 72px 0;
+    }
+
+    @include lg {
+        grid-template-columns: auto 1000px auto;
+        padding: 130px 0;
+    }
+
+    @include xl {
+        grid-template-columns: auto 1200px auto;
+    }
+
+
+
+    >div {
+        grid-area: maintain;
+
+
+        #maintain-content {
+
+            margin-bottom: 40px;
+
+
+            @include md {
+                margin-bottom: 80px;
+            }
+
+
+            >div {
+
+                display: grid;
+                grid-template-columns: 25% auto;
+                grid-template-areas: "h1 h2 "
+                    " p p ";
+
+
+                @include md {
+                    grid-template-columns: 20% auto;
+                    grid-template-areas: "h1 h2"
+                        "h1 p"
+                        ". p"
+                    ;
+                }
+
+
+                h1 {
+                    grid-area: h1;
+
+                    @include md {
+                        margin-left: 50px;
+                    }
+
+                    @include lg {
+                        margin-left: 80px;
+                    }
+
+
+                }
+
+                h2 {
+                    grid-area: h2;
+                    color: $caramel;
+                    font-size: rem-calc(35);
+
+                    @include md {
+                        font-size: rem-calc(40);
+                    }
+                }
+
+                p {
+                    grid-area: p;
+                    color: $brown;
+                    font-size: rem-calc(18);
+                    margin-top: 20px;
+
+                    @include md {
+                        font-size: rem-calc(24);
+                    }
+
+                    @include lg {
+                        font-size: rem-calc(30);
+                    }
+                }
+            }
+
+        }
+
+        #sheering {
+
+ 
+
+
+            >div {
+
+                display: grid;
+                grid-template-areas: "s-right"
+                    "s-left";
+              
+              
+
+
+                @include md {
+
+                    grid-template-columns: 40% 60%;
+                    grid-template-areas: "s-left s-right";
+                }
+
+
+                #sheering-left {
+
+                    display: grid;
+                    grid-template-columns: 40px auto 40px;
+                    grid-template-areas: ". sheering-left .";
+                    padding: 45px 0;
+                    background-color: $tan;
+                    border-radius: 0 0 15px 15px;
+                    grid-area: s-left;
+                   
+                    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+
+                    @include md {
+                        border-radius: 15px 0 0 15px;
+                        padding-top: 60px;
+
+                    }
+
+                    @include lg {
+
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    >div {
+                        grid-area: sheering-left;
+
+                        h4 {
+                            color: $caramel;
+                            font-size: rem-calc(16);
+                            margin-bottom: 15px;
+
+                            @include lg {
+                                font-size: rem-calac(19);
+                            }
+                        }
+
+                        h2 {
+                            color: $brown;
+                            font-size: rem-calc(24);
+                            margin-bottom: 15px;
+
+
+                            @include xl {
+                                font-size: rem-calc(30);
+                            }
+
+                        }
+
+                        p {
+                            color: $brown;
+                            font-size: rem-calc(18);
+                            margin-bottom: 15px;
+
+                            @include xl {
+                                font-size: rem-calc(24);
+                            }
+                        }
+
+                        button {
+                            background-color: $blue;
+                            border-radius: 10px;
+                            border: none;
+                            padding: 12px 20px;
+                            color: $brown;
+                            font-weight: 500;
+                            height: 60px;
+
+
+
+                            &:hover {
+                                background-color: $caramel;
+                                color: $blue;
+                                cursor: pointer;
+                            }
+
+                            @include lg {
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+
+                #sheering-right {
+                    background-image: url("../img/maintain/sheering.jpg");
+                    height: 300px;
+                    background-size: cover;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    grid-area: s-right;
+                    border-radius: 15px 15px 0 0;
+                    box-shadow: 4px 0px 8px 0 rgba(0, 0, 0, 0.2);
+                 
+
+                    @include md {
+                        border-radius: 0 15px 15px 0;
+                        height: 400px;
+                        box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+                    }
+
+                    @include lg {
+                        height: 500px;
+                    }
+
+
+                }
+            }
+
+        }
+    }
+}

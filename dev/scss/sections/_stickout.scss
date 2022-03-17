@@ -1,0 +1,135 @@
+#stickout {
+
+    display: grid;
+    grid-template-columns: 30px auto 30px;
+    grid-template-areas: ". stickout .";
+    background-color: $brown;
+    padding: 64px 0;
+
+    @include md {
+        margin-top: -5px;
+    }
+
+    @include lg {
+        padding: 100px 0;
+    }
+
+    >div {
+        grid-area: stickout;
+
+        @include md {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: "S-content s-image";
+            gap: 60px;
+        }
+
+        #stickout-content {
+
+
+            >div {
+                display: grid;
+                grid-template-columns: 25% auto;
+                grid-template-areas: "h1 h2"
+                    "h1 p";
+
+                @include md {
+                    grid-area: S-content;
+                }
+
+
+
+
+
+                h1 {
+                    grid-area: h1;
+
+                }
+
+                .circle {
+                    border-radius: 50%;
+                    background-color: $tan;
+                    width: 80px;
+                    height: 80px;
+                    color: $brown;
+                    font-size: rem-calc(50);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    @include lg {
+                        font-size: rem-calc(80);
+                        width: 120px;
+                        height: 120px;
+                    }
+
+                    @include xl{
+                        margin-left: 40px;
+                    }
+
+                }
+
+                h2 {
+                    grid-area: h2;
+                    font-size: rem-calc(35);
+                    color: $tan;
+
+                    @include md {
+                        font-size: rem-calc(40);
+                        margin-left: 40px;
+                    }
+
+                    @include xl{
+                        margin-left: 0;
+                    }
+                }
+
+                p {
+                    grid-area: p;
+                    color: $tan;
+                    font-size: rem-calc(18);
+                    margin-top: 15px;
+
+                    @include md {
+                        font-size: rem-calc(24);
+                        margin-left: 40px;
+                    }
+
+                    @include lg {
+                        font-size: rem-calc(30);
+
+                    }
+
+                    @include xl{
+                        margin-left: 0;
+                    }
+                }
+
+
+            }
+        }
+
+        #stickout-image {
+            img {
+                display: none;
+            }
+
+            background-image: url("../img/stickout/llama_cutout.png");
+            background-position: center;
+            background-size: cover;
+            height: 550px;
+            margin-top: 15px;
+
+            @include md {
+                grid-area: s-image;
+
+                background-image: none;
+
+                img {
+                    display: grid;
+                    margin-top: -280px;
+                }
+            }
+        }
+    }
+}
